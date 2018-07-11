@@ -1,0 +1,44 @@
+// Top-level build file where you can add configuration options common to all sub-projects/modules.
+
+buildscript {
+
+    ext.aspectjVersion = "1.8.13"
+    
+    repositories {
+        google()
+        jcenter()
+        mavenCentral() // add repository
+
+    }
+
+    dependencies {
+        classpath 'com.android.tools.build:gradle:3.0.1'
+
+        classpath 'org.greenrobot:greendao-gradle-plugin:3.2.2'
+
+        //aspecj
+//        classpath 'com.hujiang.aspectjx:gradle-android-plugin-aspectjx:1.1.1'
+//        classpath 'org.aspectj:aspectjtools:'+aspectjVersion
+
+        // NOTE: Do not place your application dependencies here; they belong
+        // in the individual module build.gradle files
+    }
+}
+
+allprojects {
+    repositories {
+        google()
+
+        jcenter()
+
+        maven { url "https://jitpack.io" }
+
+        maven {
+            url "http://mvn.gt.igexin.com/nexus/content/repositories/releases/"
+        }
+    }
+}
+
+task clean(type: Delete) {
+    delete rootProject.buildDir
+}
